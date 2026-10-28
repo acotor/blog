@@ -15,3 +15,10 @@ html.dark body { color: #e0d9ce; background: #1c1b19; }
 html.dark a, html.dark .header nav a, html.dark .post .tags a { color: #d9c7ad; }
 html.dark a:hover, html.dark .header nav a:hover { color: #f0dfc4; }
 html.dark .post .tags a { border-color: #8f806d; }
+.footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.footer-controls { display: flex; align-items: center; gap: 1.1rem; }
+.footer-controls a, .footer-controls button { display: inline-flex; align-items: center; justify-content: center; color: inherit; }
+.footer-controls button { border: 0; padding: 0; background: transparent; cursor: pointer; }
+.footer-controls svg { width: 17px; height: 17px; }
+.footer-copyright { text-align: right; }
+@media (max-width: 360px) { .footer { gap: .5rem; } .footer-controls { gap: .65rem; } }

@@ -1,2 +1,8 @@
-<footer class="footer wrapper">{{ site.Copyright }}</footer>
+<footer class="footer wrapper">
+  <div class="footer-controls">
+    {{ range site.Params.social }}<a href="{{ .url }}" title="{{ .name }}" aria-label="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>{{ end }}
+    {{ if or (eq site.Params.mode "auto") (eq site.Params.mode "dark") }}<button type="button" id="scheme-toggle" aria-label="切换深浅色主题" title="切换深浅色主题"></button>{{ end }}
+  </div>
+  <div class="footer-copyright">{{ site.Copyright }}</div>
+</footer>
 {{ with site.Params.social }}<script>feather.replace()</script>{{ end }}

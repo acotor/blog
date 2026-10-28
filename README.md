@@ -1,4 +1,4 @@
-# PHAK
+# OZ Blog
 
 基于 Hugo 的个人博客。
 

@@ -1,6 +1,6 @@
-baseURL = "https://blog.phak.cc/"
-title = "PHAK"
-copyright = "© toraPHAK"
+baseURL = "https://blog.ozee.cc/"
+title = "OZ Blog"
+copyright = "© OZ"
 theme = "ink-free"
 defaultContentLanguage = "zh"
 hasCJKLanguage = true
@@ -15,7 +15,7 @@ commentsEnabled = true
 [[params.social]]
 name = "本钟"
 icon = "message-circle"
-url = "https://t.phak.cc"
+url = "https://t.ozee.cc"
 [[params.social]]
 name = "RSS"
 icon = "rss"

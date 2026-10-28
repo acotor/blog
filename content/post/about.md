@@ -16,7 +16,7 @@ Personal Handbook of Adult Knowledge. 😏
 
 Anyway 这名字其实是瞎起的
 
-博客里放一些中长文字，只言片语则欢迎访问[这里](https://t.phak.cc)
+博客里放一些中长文字，只言片语则欢迎访问[这里](https://t.ozee.cc)
 
 # 博主
 

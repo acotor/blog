@@ -3,6 +3,7 @@
     {{ range site.Params.social }}<a href="{{ .url }}" title="{{ .name }}" aria-label="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>{{ end }}
     {{ if or (eq site.Params.mode "auto") (eq site.Params.mode "dark") }}<button type="button" id="scheme-toggle" aria-label="切换深浅色主题" title="切换深浅色主题"></button>{{ end }}
   </div>
-  <div class="footer-copyright">{{ site.Copyright }}</div>
+  <div class="footer-copyright"><span id="copyright-year">{{ now.Year }}</span> {{ site.Copyright }}</div>
 </footer>
+<script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
 {{ with site.Params.social }}<script>feather.replace()</script>{{ end }}

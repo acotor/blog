@@ -1,6 +1,7 @@
 /* Local font fallbacks keep the site readable without external font services. */
 body {
   font-family: Georgia, "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+  font-variant-numeric: lining-nums;
   line-height: 1.85;
   color: #292723;
 }
@@ -15,6 +16,17 @@ html.dark body { color: #e0d9ce; background: #1c1b19; }
 html.dark a, html.dark .header nav a, html.dark .post .tags a { color: #d9c7ad; }
 html.dark a:hover, html.dark .header nav a:hover { color: #f0dfc4; }
 html.dark .post .tags a { border-color: #8f806d; }
+/* Make links in article text recognizable without dominating the page. */
+.post :is(p, li, blockquote, td) a:not(:has(img)) {
+  text-decoration-line: underline;
+  text-decoration-color: #b4a797;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+.post :is(p, li, blockquote, td) a:hover { text-decoration-color: currentColor; }
+html.dark .post :is(p, li, blockquote, td) a:not(:has(img)) { text-decoration-color: #8f806d; }
+html.dark .post :is(p, li, blockquote, td) a:hover { text-decoration-color: currentColor; }
+.post a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .footer-controls { display: flex; align-items: center; gap: 1.1rem; }
 .footer-controls a, .footer-controls button { display: inline-flex; align-items: center; justify-content: center; color: inherit; }

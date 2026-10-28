@@ -1,6 +1,6 @@
 baseURL = "https://blog.phak.cc/"
 title = "PHAK"
-copyright = "2024 © toraPHAK"
+copyright = "© toraPHAK"
 theme = "ink-free"
 defaultContentLanguage = "zh"
 hasCJKLanguage = true

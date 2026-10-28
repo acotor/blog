@@ -12,6 +12,12 @@ a:hover, .header nav a:hover, .post .tags a:hover { color: #8a5a3b; border-color
 .post .tags a { border-color: #b4a797; }
 .post-header .meta .date .day { font-family: Georgia, "Songti SC", serif; }
 pre, code, kbd, samp { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+/* iOS reading fonts: aligned Latin digits and self-hosted Chinese serifs. */
+html[data-ios-reading] body,
+html[data-ios-reading] .header .site-title,
+html[data-ios-reading] .post-header .meta .date .day {
+  font-family: "Times New Roman", "Noto Serif SC Variable", "Songti SC", serif;
+}
 html.dark body { color: #e0d9ce; background: #1c1b19; }
 html.dark a, html.dark .header nav a, html.dark .post .tags a { color: #d9c7ad; }
 html.dark a:hover, html.dark .header nav a:hover { color: #f0dfc4; }

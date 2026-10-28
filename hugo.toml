@@ -1,5 +1,6 @@
 baseURL = "https://blog.phak.cc/"
 title = "PHAK"
+copyright = "2024 © toraPHAK"
 theme = "ink-free"
 defaultContentLanguage = "zh"
 hasCJKLanguage = true
@@ -11,6 +12,14 @@ maxTags = 7
 wpm = 250
 featherIconsCDN = false
 commentsEnabled = false
+[[params.social]]
+name = "本钟"
+icon = "message-circle"
+url = "https://t.phak.cc"
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/atom.xml"
 [[menu.main]]
 name = "首页"
 url = "/"

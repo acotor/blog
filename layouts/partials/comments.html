@@ -1,1 +1,28 @@
-<section aria-label="评论"><h2>评论</h2><script src="https://utteranc.es/client.js" repo="phakcc/phakcc.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script></section>
+<section aria-label="评论">
+  <h2>评论</h2>
+  <script>
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo', 'phakcc/phakcc.github.io');
+      script.setAttribute('data-repo-id', 'R_kgDOI6xT4g');
+      script.setAttribute('data-category', 'Announcements');
+      script.setAttribute('data-category-id', 'DIC_kwDOI6xT4s4DJzqH');
+      script.setAttribute('data-mapping', 'pathname');
+      script.setAttribute('data-strict', '1');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '0');
+      script.setAttribute('data-input-position', 'bottom');
+      script.setAttribute('data-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      script.setAttribute('data-lang', 'zh-CN');
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+      document.currentScript.parentNode.appendChild(script);
+      new MutationObserver(function () {
+        var frame = document.querySelector('iframe.giscus-frame');
+        if (frame) frame.contentWindow.postMessage({giscus: {setConfig: {theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light'}}}, 'https://giscus.app');
+      }).observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
+    })();
+  </script>
+  <noscript>评论功能需要启用 JavaScript。</noscript>
+</section>

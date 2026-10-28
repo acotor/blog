@@ -11,7 +11,7 @@ toc = "none"
 maxTags = 7
 wpm = 250
 featherIconsCDN = false
-commentsEnabled = false
+commentsEnabled = true
 [[params.social]]
 name = "本钟"
 icon = "message-circle"

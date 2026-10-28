@@ -19,7 +19,7 @@
 	</div>
 	{{ end }}
 
-	{{ if and site.Params.commentsEnabled (eq .RelPermalink "/post/blog-migration-with-ai/") }}
+	{{ if and site.Params.commentsEnabled (eq .Section "post") (ne .Type "page") }}
 	<div class="container wrapper">{{ partial "comments.html" . }}</div>
 	{{ end }}
 	{{ partial "footer.html" . }}

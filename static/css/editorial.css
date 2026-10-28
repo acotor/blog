@@ -40,3 +40,16 @@ html.dark .post :is(p, li, blockquote, td) a:hover { text-decoration-color: curr
 .footer-controls svg { width: 17px; height: 17px; }
 .footer-copyright { text-align: right; }
 @media (max-width: 360px) { .footer { gap: .5rem; } .footer-controls { gap: .65rem; } }
+
+/* Warm, readable accents in place of the theme's blue and purple defaults. */
+::selection { background: #e8dac8; color: #292723; text-shadow: none; }
+::-moz-selection { background: #e8dac8; color: #292723; text-shadow: none; }
+html.dark ::selection { background: #6d5945; color: #f6eee2; text-shadow: none; }
+html.dark ::-moz-selection { background: #6d5945; color: #f6eee2; text-shadow: none; }
+blockquote { border-color: #b4a797; }
+html.dark blockquote { border-color: #8f806d; }
+.post .draft-label { color: #514638; background-color: #eee6db; }
+html.dark .post .draft-label { color: #e0d9ce; background-color: #4a3c30; }
+.footer .footer-controls a:hover, .footer .footer-controls button:hover { color: #8a5a3b; border-color: #8a5a3b; }
+html.dark .footer .footer-controls a:hover, html.dark .footer .footer-controls button:hover { color: #f0dfc4; border-color: #f0dfc4; }
+.footer-controls :is(a, button):focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }

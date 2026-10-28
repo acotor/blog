@@ -1,0 +1,40 @@
+baseURL = "https://blog.phak.cc/"
+title = "PHAK"
+theme = "ink-free"
+defaultContentLanguage = "zh"
+hasCJKLanguage = true
+[params]
+mainSections = ["post"]
+mode = "auto"
+toc = "none"
+maxTags = 7
+wpm = 250
+featherIconsCDN = false
+commentsEnabled = false
+[[menu.main]]
+name = "首页"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "归档"
+url = "/archives/"
+weight = 2
+[[menu.main]]
+name = "标签"
+url = "/tags/"
+weight = 2
+[[menu.main]]
+name = "关于"
+url = "/post/about/"
+weight = 3
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.extensions.typographer]
+disable = true
+
+[outputFormats.legacyfeed]
+mediaType = "application/rss+xml"
+baseName = "atom"
+isPlainText = false
+[outputs]
+home = ["HTML", "RSS", "legacyfeed"]

@@ -1,0 +1,20 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.Title }}</title>
+  <link href="{{ site.BaseURL }}"/>
+  <id>{{ site.BaseURL }}</id>
+  <author><name>PHAK</name></author>
+  {{- $pages := where (where site.RegularPages "Section" "post") "Params.hidden" "ne" true }}
+  {{- $pages = where $pages "Type" "ne" "page" }}
+  {{- with (index $pages 0) }}<updated>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</updated>{{ end }}
+  {{- range $pages }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+    <summary type="text">{{ .Summary | plainify }}</summary>
+    <content type="html">{{ printf "%s" .Content }}</content>
+  </entry>
+  {{- end }}
+</feed>

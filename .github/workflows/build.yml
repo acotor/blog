@@ -1,0 +1,35 @@
+name: Preview build
+on:
+  push:
+    branches: [hugo-source]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Hugo
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=0.169.0
+          archive="hugo_${version}_linux-amd64.tar.gz"
+          checksums="hugo_${version}_checksums.txt"
+          base="https://github.com/gohugoio/hugo/releases/download/v${version}"
+          curl -fsSL "$base/$archive" -o "$RUNNER_TEMP/$archive"
+          curl -fsSL "$base/$checksums" -o "$RUNNER_TEMP/$checksums"
+          cd "$RUNNER_TEMP"
+          grep "  ${archive}$" "$checksums" | sha256sum --check --strict
+          mkdir -p "$RUNNER_TEMP/hugo-bin"
+          tar -xzf "$archive" -C "$RUNNER_TEMP/hugo-bin" hugo
+          echo "$RUNNER_TEMP/hugo-bin" >> "$GITHUB_PATH"
+      - name: Build static site
+        run: hugo --minify
+      - name: Save preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-preview
+          path: public/
+          if-no-files-found: error

@@ -1,0 +1,17 @@
+/* Local font fallbacks keep the site readable without external font services. */
+body {
+  font-family: Georgia, "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+  line-height: 1.85;
+  color: #292723;
+}
+.header .site-title { font-family: Georgia, "Songti SC", serif; line-height: 1.15; }
+h1, h2, h3, h4, h5, h6 { font-family: inherit; }
+a, .header nav a, .post .tags a { color: #514638; }
+a:hover, .header nav a:hover, .post .tags a:hover { color: #8a5a3b; border-color: #8a5a3b; }
+.post .tags a { border-color: #b4a797; }
+.post-header .meta .date .day { font-family: Georgia, "Songti SC", serif; }
+pre, code, kbd, samp { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+html.dark body { color: #e0d9ce; background: #1c1b19; }
+html.dark a, html.dark .header nav a, html.dark .post .tags a { color: #d9c7ad; }
+html.dark a:hover, html.dark .header nav a:hover { color: #f0dfc4; }
+html.dark .post .tags a { border-color: #8f806d; }

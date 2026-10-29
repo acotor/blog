@@ -30,8 +30,10 @@ jobs:
           mkdir -p "$RUNNER_TEMP/hugo-bin"
           tar -xzf "$archive" -C "$RUNNER_TEMP/hugo-bin" hugo
           echo "$RUNNER_TEMP/hugo-bin" >> "$GITHUB_PATH"
-      - name: Build Hugo
-        run: hugo --minify
+      - name: Build public preview
+        run: |
+          hugo --minify --baseURL https://acotor.github.io/blog/
+          python3 -c 'from pathlib import Path; [(p.write_text(p.read_text().replace("<head>", "<head><meta name=\"robots\" content=\"noindex,nofollow\">", 1))) for p in Path("public").rglob("*.html")]'
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:

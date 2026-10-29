@@ -1,7 +1,5 @@
 name: Deploy to GitHub Pages
 on:
-  push:
-    branches: [hugo-source]
   workflow_dispatch:
 permissions:
   contents: read

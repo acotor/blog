@@ -42,6 +42,11 @@
 		href="{{ .Site.BaseURL }}{{ .Site.Params.customDarkCSS }}" />
 	{{- end }}
 	<link rel="stylesheet" href="{{ "css/editorial.css" | relURL }}" />
+	{{ if hugo.IsProduction }}
+	<!-- Cloudflare Web Analytics -->
+	<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"8eddeaa276304f7eadba3d54299b0132"}'></script>
+	<!-- End Cloudflare Web Analytics -->
+	{{ end }}
 	{{- $enableUmami := and (isset .Site.Params "enableumami") (.Site.Params.enableUmami) -}}
 	{{- $hasURL := isset .Site.Params "umamiurl" -}}
 	{{- $hasID := isset .Site.Params "umamiwebsiteid" -}}
